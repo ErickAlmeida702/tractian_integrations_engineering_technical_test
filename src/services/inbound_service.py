@@ -1,9 +1,9 @@
 import os
 import json
 from pathlib import Path
-from domain.models import CustomerWorkorder
-from services.translator import WorkorderTranslator
-from repositories.workorder_repository import TracOSWorkorderRepository
+from src.domain.models import CustomerWorkorder
+from src.services.translator import WorkorderTranslator
+from src.repositories.workorder_repository import TracOSWorkorderRepository
 import logging
 from pydantic import ValidationError
 
