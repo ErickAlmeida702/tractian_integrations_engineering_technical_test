@@ -58,7 +58,6 @@ class CustomerSystemWorkorder(TypedDict):
 
 
 def create_tracos_sample_workorders() -> list[TracOSWorkorder]:
-    """Generate n sample workorder documents."""
     base = datetime.now(timezone.utc) - timedelta(days=30)
     samples: list[TracOSWorkorder] = []
     for i in range(1, NUMBER_OF_WORKORDERS_SAMPLES_ON_TRACOS + 1):
