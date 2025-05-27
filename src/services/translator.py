@@ -1,4 +1,4 @@
-from domain.models import TracOSWorkorder
+from src.domain.models import TracOSWorkorder, CustomerWorkorder
 from datetime import datetime
 
 
@@ -30,16 +30,16 @@ class WorkorderTranslator:
     @staticmethod
     def tracos_to_client(data: TracOSWorkorder) -> CustomerWorkorder:
         return CustomerWorkorder(
-            orderNo=data.number,
-            summary=data.title,
-            creationDate=data.createdAt,
-            lastUpdateDate=data.updatedAt,
-            isCanceled=data.status == "cancelled",
-            isDeleted=data.deleted,
-            isDone=data.status == "completed",
-            isOnHold=data.status == "on_hold",
-            isPending=data.status == "pending",
-            deletedDate=data.deletedAt,
+            orderNo=data['number'],
+            summary=data['title'],
+            creationDate=data['createdAt'],
+            lastUpdateDate=data['updatedAt'],
+            isCanceled=data['status'] == "cancelled",
+            isDeleted=data['deleted'],
+            isDone=data['status'] == "completed",
+            isOnHold=data['status'] == "on_hold",
+            isPending=data['status'] == "pending",
+            deletedDate=data['deletedAt'],
         )
 
     @staticmethod

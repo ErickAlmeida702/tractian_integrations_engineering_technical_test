@@ -1,5 +1,5 @@
 from motor.motor_asyncio import AsyncIOMotorCollection
-from domain.models import TracOSWorkorder
+from src.domain.models import TracOSWorkorder
 from datetime import datetime
 from pymongo import ReturnDocument
 
