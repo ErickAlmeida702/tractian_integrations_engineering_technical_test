@@ -1,3 +1,5 @@
+from typing import Any
+
 from motor.motor_asyncio import AsyncIOMotorCollection
 from src.domain.models import TracOSWorkorder
 from datetime import datetime
@@ -5,7 +7,7 @@ from pymongo import ReturnDocument
 
 
 class TracOSWorkorderRepository:
-    def __init__(self, collection: AsyncIOMotorCollection):
+    def __init__(self, collection: AsyncIOMotorCollection[Any]):
         self.collection = collection
 
     async def upsert(self, workorder: TracOSWorkorder) -> dict:
