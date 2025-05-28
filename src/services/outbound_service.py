@@ -26,8 +26,9 @@ class OutboundService:
                 with open(file_path, "w") as f:
                     json.dump(client_wo.dict(), f, indent=2, default=str)
 
-                await self.repo.mark_as_synced(wo["number"])
+                await self.repo.mark_as_synced(tracos_wo.number)
                 self.logger.info(f"Exported {file_path.name} successfully.")
 
             except Exception as e:
                 self.logger.error(f"Failed to export workorder {wo.get('number')}: {e}")
+
