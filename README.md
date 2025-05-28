@@ -27,13 +27,7 @@ cd tractian_integrations_engineering_technical_test
 poetry install
 ```
 
-### 3. Ative o ambiente virtual
-
-```
-poetry shell
-```
-
-### 4. Suba o MongoDB com Docker
+### 3. Suba o MongoDB com Docker
 
 ```
 sudo docker-compose up -d
@@ -41,7 +35,7 @@ sudo docker-compose up -d
 
 ---
 
-### 5. Configurando  variaveis de ambiente**  
+### 4. Configurando  variaveis de ambiente**  
    ```bash  
    # Create a .env file or export directly in your shell  
    echo "MONGO_URI=mongodb://localhost:27017/tractian" > .env   echo "DATA_INBOUND_DIR=./data/inbound" >> .env   echo "DATA_OUTBOUND_DIR=./data/outbound" >> .env  
