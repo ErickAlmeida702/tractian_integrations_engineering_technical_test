@@ -17,8 +17,8 @@ A estrutura do projeto foi pensada para ser **modular, extensível e fácil de m
 ### 1. Clone o repositório
 
 ```
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/ErickAlmeida702/tractian_integrations_engineering_technical_test
+cd tractian_integrations_engineering_technical_test
 ```
 
 ### 2. Crie o ambiente virtual com Poetry
