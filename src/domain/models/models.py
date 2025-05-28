@@ -20,7 +20,7 @@ class TracOSWorkorder(BaseModel):
     number: int
     status: Literal["pending", "in_progress", "completed", "on_hold", "cancelled"]
     title: str
-    description: str
+    description: Optional[str] = None
     createdAt: datetime
     updatedAt: datetime
     deleted: bool

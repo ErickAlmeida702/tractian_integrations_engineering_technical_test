@@ -18,14 +18,14 @@ class InboundService:
         self.inbound_dir = Path(inbound_dir)
         self.logger = logging.getLogger(__name__)
 
-    async def process_inbound_files(self):
+    async def process_inbound_files(self) -> None:
         files = list(self.inbound_dir.glob("*.json"))
         self.logger.info(f"Found {len(files)} files to process.")
         for file_path in files:
             await self._process_file(file_path)
 
 
-    async def _process_file(self, path: Path):
+    async def _process_file(self, path: Path) -> None:
         try:
             with open(path, "r") as f:
                 raw: dict[str, Any] = json.load(f)
