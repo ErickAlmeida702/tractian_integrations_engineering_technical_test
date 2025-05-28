@@ -99,3 +99,8 @@ tests/: Estrutura de testes automatizados, com cobertura de casos end-to-end.
 -  Usar Kafka para orquestrar mensagens entre sistemas
 
 -   Melhorar o uso da Docker
+
+## 📬 Contato
+Caso tenha qualquer dúvida sobre o projeto ou precise de mais informações:
+
+📧 erickalmeida702@gmail.com
