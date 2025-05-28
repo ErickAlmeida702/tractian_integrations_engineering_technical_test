@@ -75,6 +75,12 @@ Esse comando irá:
 poetry run pytest
 ```
 
+## 🧪 Verificações do MYPY
+
+```
+poetry run mypy src/ --explicit-package-bases
+```
+
 🧱 Arquitetura e Decisões Técnicas
 Este projeto foi estruturado com foco em modularidade, escalabilidade e facilidade de manutenção. A arquitetura segue os princípios do Domain-Driven Design (DDD) e boas práticas como separação de responsabilidades (SRP - Single Responsibility Principle), além de padrões inspirados na Clean Architecture.
 
