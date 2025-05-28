@@ -15,7 +15,7 @@ class TracOSWorkorderRepository:
     async def upsert(self, workorder: TracOSWorkorder) -> Optional[TracOSWorkorderDict]:
         result = await self.collection.find_one_and_update(
             {"number": workorder.number},
-            {"$set": workorder.dict()},
+            {"$set": workorder.model_dump()},
             upsert=True,
             return_document=ReturnDocument.AFTER,
         )
