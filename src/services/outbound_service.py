@@ -24,7 +24,7 @@ class OutboundService:
                 client_wo = WorkorderTranslator.tracos_to_client(tracos_wo)
                 file_path = self.outbound_dir / f"{client_wo.orderNo}.json"
                 with open(file_path, "w") as f:
-                    json.dump(client_wo.dict(), f, indent=2, default=str)
+                    json.dump(client_wo.model_dump(), f, indent=2, default=str)
 
                 await self.repo.mark_as_synced(tracos_wo.number)
                 self.logger.info(f"Exported {file_path.name} successfully.")
