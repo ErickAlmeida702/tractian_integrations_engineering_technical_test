@@ -1,5 +1,7 @@
 from src.domain.models import TracOSWorkorder, CustomerWorkorder
 from datetime import datetime
+from typing import Literal, Dict
+
 
 
 class WorkorderTranslator:
@@ -14,7 +16,7 @@ class WorkorderTranslator:
 
     @staticmethod
     def client_to_tracos(data: CustomerWorkorder) -> TracOSWorkorder:
-        status = WorkorderTranslator._resolve_status(data)
+        status = WorkorderTranslator._map_status(data)
 
         return TracOSWorkorder(
             number=data.orderNo,
@@ -43,8 +45,14 @@ class WorkorderTranslator:
         )
 
     @staticmethod
-    def _resolve_status(data: CustomerWorkorder) -> str:
-        for key, value in data.dict().items():
-            if key in WorkorderTranslator.STATUS_MAPPING and value:
-                return WorkorderTranslator.STATUS_MAPPING[key]
-        return "pending"
+    def _map_status(data: CustomerWorkorder) -> Literal["pending", "in_progress", "completed", "on_hold", "cancelled"]:
+        if data.isPending:
+            return "pending"
+        elif data.isOnHold:
+            return "on_hold"
+        elif data.isDone:
+            return "completed"
+        elif data.isCanceled:
+            return "cancelled"
+        else:
+            return "in_progress"
