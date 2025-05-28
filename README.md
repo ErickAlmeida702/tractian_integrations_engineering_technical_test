@@ -75,10 +75,26 @@ Esse comando irá:
 poetry run pytest
 ```
 
+🧱 Arquitetura e Decisões Técnicas
+Este projeto foi estruturado com foco em modularidade, escalabilidade e facilidade de manutenção, características essenciais para integrações robustas no contexto de Indústria 4.0. A arquitetura segue os princípios do Domain-Driven Design (DDD) e boas práticas como separação de responsabilidades (SRP - Single Responsibility Principle), além de padrões inspirados na Clean Architecture.
+
+📦 Camadas e Organização
+domain/: Contém os modelos de domínio que representam as entidades da ordens de serviço.
+
+repositories/: Responsáveis pela comunicação com o banco de dados, utilizando MongoDB de forma assíncrona.
+
+services/: Implementam a lógica de negócio, orquestrando o fluxo entre as camadas.
+
+translators/: Realizam a conversão entre formatos do cliente e do TracOS, permitindo fácil adaptação para novos ERPs no futuro.
+
+config/: Centraliza configurações e variáveis de ambiente, facilitando a manutenção e a portabilidade.
+
+tests/: Estrutura de testes automatizados, com cobertura de casos end-to-end.
+
 ## 📌 Melhorias Futuras
 
 -  Substituir persistência mock por MongoDB real com conexão via API
     
 -  Usar Kafka para orquestrar mensagens entre sistemas
 
-    Melhorar o uso da Docker
+-   Melhorar o uso da Docker
