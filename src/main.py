@@ -1,6 +1,8 @@
 import asyncio
 import os
 import logging
+from pathlib import Path
+
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase, AsyncIOMotorCollection
 from src.repositories.workorder_repository import TracOSWorkorderRepository
 from src.services.inbound_service import InboundService
@@ -8,11 +10,12 @@ from src.services.outbound_service import OutboundService
 
 logging.basicConfig(level=logging.INFO)
 
+BASE_DIR = Path(__file__).resolve().parent.parent
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
 MONGO_DB = os.getenv("MONGO_DATABASE", "tractian")
 MONGO_COLLECTION = os.getenv("MONGO_COLLECTION", "workorders")
-INBOUND_DIR = os.getenv("DATA_INBOUND_DIR", "../data/inbound")
-OUTBOUND_DIR = os.getenv("DATA_OUTBOUND_DIR", "../data/outbound")
+INBOUND_DIR = os.getenv("DATA_INBOUND_DIR", str(BASE_DIR / "data" / "inbound"))
+OUTBOUND_DIR = os.getenv("DATA_OUTBOUND_DIR", str(BASE_DIR / "data" / "outbound"))
 
 
 async def main() -> None:
