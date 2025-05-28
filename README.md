@@ -76,9 +76,10 @@ poetry run pytest
 ```
 
 🧱 Arquitetura e Decisões Técnicas
-Este projeto foi estruturado com foco em modularidade, escalabilidade e facilidade de manutenção, características essenciais para integrações robustas no contexto de Indústria 4.0. A arquitetura segue os princípios do Domain-Driven Design (DDD) e boas práticas como separação de responsabilidades (SRP - Single Responsibility Principle), além de padrões inspirados na Clean Architecture.
+Este projeto foi estruturado com foco em modularidade, escalabilidade e facilidade de manutenção. A arquitetura segue os princípios do Domain-Driven Design (DDD) e boas práticas como separação de responsabilidades (SRP - Single Responsibility Principle), além de padrões inspirados na Clean Architecture.
 
 📦 Camadas e Organização
+
 domain/: Contém os modelos de domínio que representam as entidades da ordens de serviço.
 
 repositories/: Responsáveis pela comunicação com o banco de dados, utilizando MongoDB de forma assíncrona.
